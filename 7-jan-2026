@@ -1,1 +1,49 @@
+flags = []
+warnings = []
 
+name = input("Enter patient name: ")
+age = input("Enter age: ")
+
+if age == "":
+    flags.append("Invalid age")
+else:
+    age = int(age)
+    if age < 0 or age > 120:
+        flags.append("Invalid age")
+def heart_rate(n, warnings, flags):
+    if n == 0:
+        return flags, warnings
+
+    hr = input("Enter heart rate: ")
+
+    if hr == "":
+        flags.append("Invalid heart rate")
+    else:
+        hr = int(hr)
+        if hr > 180:
+            warnings.append("High heart rate")
+
+    return heart_rate(n - 1, warnings, flags)
+
+n = input("Enter number of heart rate readings: ")
+
+if n == "":
+    n = 0
+    flags.append("Invalid number of readings")
+else:
+    n = int(n)
+    
+flags, warnings = heart_rate(n, warnings, flags)
+
+if flags:
+    status = "FAIL"
+elif warnings:
+    status = "REVIEW"
+else:
+    status = "PASS"
+
+print(" Audit Report ")
+print("Patient Name:", name)
+print("Flags:", flags)
+print("Warnings:", warnings)
+print("Final Status:", status)

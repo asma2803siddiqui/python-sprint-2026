@@ -1,0 +1,6 @@
+# day 1 beginner level
+name = input("enter ur name:")
+age = input("enter ur age:")
+city = input("city:")
+
+print("hello, my name is ", name, "." , "\ni am ", age , "year old . i live in " , city, ".")

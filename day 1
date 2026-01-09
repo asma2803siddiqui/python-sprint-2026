@@ -21,5 +21,50 @@ elif  age >= 18 and age <= 25 :
     print("Prime time to build skills")
 else :
     print("Experience meets learning")
+# day 3 adv level---------------------------------------------
+name = input("full name :")
+if name.strip() == "" :
+    print("sahi sahi naam enter kro")
+    name = input("name:")
+age = int(input("age :"))
+city = input("city:" )
+primary_skill = input("skill:")
+skill_level = input("Beginner / Intermediate / Advanced : " )
+print("------candidate profile card------")
+      
+if age > 10  and age < 60 :
+    if age < 18 :
+        career_stage = "student"
+    elif age >= 18 and age <= 25 :
+        career_stage =  "early professional"
+    else :
+        career_stage = "exp professional"
+else :
+    print("invalid age")
+if skill_level == "Beginner" :
+    Readiness_Tag = "foundation stage"
+elif skill_level == "Intermediate" :
+    Readiness_Tag = "Intern / Junior Ready"
+elif   skill_level == "Advanced" :
+    Readiness_Tag =  "Production Ready"
+else :
+    print("Please choose from Beginner/Intermediate/Advanced only")
+
+if skill_level == "Beginner" :
+    Recommendation =  "Focus on core fundamentals and consistency"
+elif  skill_level == "Intermediate" :
+    Recommendation = "Start building real-world projects"
+elif   skill_level == "Advanced" :
+    Recommendation = "Contribute to production-grade systems"
+    
+print(f"name : {name}")   
+print(f"age : {age}")
+print(f"city: {city}")
+print(f"primary skill: {primary_skill}")
+print(f"skill level : {skill_level}")
+print(f"career stage: {career_stage}")
+print(f"readiness tag : {Readiness_Tag}")
+print(f"recommendation : { Recommendation}")
+
     
                                 

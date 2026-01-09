@@ -1,6 +1,25 @@
-# day 1 beginner level
+# day 1 beginner level-------------------------------------------
 name = input("enter ur name:")
 age = input("enter ur age:")
 city = input("city:")
 
 print("hello, my name is ", name, "." , "\ni am ", age , "year old . i live in " , city, ".")
+
+# day 2 intermediate level-------------------------------------
+
+name = input("enter ur name:")
+age = int(input("enter ur age:"))
+city = input("city:")
+name = name.title()
+birth_year = 2026 - age
+
+print("hello, my name is ", name, "." , "\ni am ", age , "year old (born in", birth_year,")and i live in ", city , ".")
+
+if age < 18 :
+    print("just getting started")
+elif  age >= 18 and age <= 25 :
+    print("Prime time to build skills")
+else :
+    print("Experience meets learning")
+    
+                                

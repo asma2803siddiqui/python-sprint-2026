@@ -1,0 +1,27 @@
+#day 2 beginner
+name = input("name:")
+age = int(input("age:"))
+sub1 = input("sub1:")
+sub2 = input("sub2:")
+sub3 = input("sub3:")
+list = [sub1 , sub2 , sub3 ]
+roll_no = input("roll no :")
+branch = input("branch:")
+tuple = (roll_no , branch)
+dict = {}
+marks1 = input("marks of sub1 :")
+marks2 = input("marks of sub2 :")
+marks3 = input("marks of sub3 :")
+dict[sub1] = marks1
+dict[sub2] = marks2
+dict[sub3] = marks3
+technical_skill1 = input("skill1:")
+technical_skill2 = input("skill2:")
+technical_skill3 = input("skill3:")
+set = {technical_skill1 , technical_skill2 , technical_skill3}
+print(f"name : {name}")
+print(f"age : {age}")
+print(list)
+print(tuple)
+print(dict)
+print(set)  

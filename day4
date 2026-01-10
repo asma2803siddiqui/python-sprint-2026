@@ -1,0 +1,21 @@
+# day4------------------  
+list = []
+i = int(input("no of days:"))
+for x in range(i):
+    n = int(input("daily expense amounts :"))
+    list.append(n)
+sum = 0
+for s in list :
+    sum = sum + s
+    
+total  = sum 
+avg = total / i
+print(list)
+print(f"total :{total}")
+print(f"avg : {avg}")
+
+
+
+
+
+      

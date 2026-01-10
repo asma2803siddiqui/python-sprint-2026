@@ -1,0 +1,23 @@
+#day 3 beginner level
+name = input("name:")
+prod1 = input("product 1 name :")
+prod2 = input("product 2 name :")
+prod3 = input("product 3 name :")
+prize1 = int(input(f"prize of {prod1} :"))
+prize2 = int(input(f"prize of {prod2} :"))
+prize3 = int(input(f"prize of {prod3} :"))
+dict = {prod1 : prize1 ,prod2 : prize2 ,prod3 : prize3 }
+total_cart_value  = prize1 + prize2 + prize3
+if  total_cart_value >= 5000:
+    discount =  20
+elif   total_cart_value >= 2000:
+    discount =  10
+else :
+    print("no discount")
+final_payable_amt = (total_cart_value * discount ) / 100
+print(f"user: {name}")
+print(f"product in cart: {dict}")
+print(f"total amt : {total_cart_value} ")
+print(f"discount : {discount}%")
+print(f"final amt: {final_payable_amt}")
+  

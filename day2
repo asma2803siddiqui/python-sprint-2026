@@ -26,3 +26,40 @@ print(f"favourite subs :{list}")
 print(f"student info :{tuple}")
 print(f"marks: {dict}")
 print(f"technical skills: {set}")
+
+#day 2 intermediate---------------------------
+name = input("name:")
+name = name.title()
+fav_sub = input("3 fav sub:")
+fav_sub = fav_sub.split(",")  
+print(fav_sub)
+roll_no = int(input("roll no :"))
+branch = input("branch:")
+tuple = (roll_no , branch)
+dict = {}
+marks1 = int(input(f"marks of  {fav_sub[0]} :"))
+marks2 = int(input(f"marks of  {fav_sub[1]} :"))
+marks3 = int(input(f"marks of {fav_sub[2]}  :"))
+dict[fav_sub[0]] = marks1
+dict[fav_sub[1]] = marks2
+dict[fav_sub[2]] = marks3
+sub_set = input("skill:")
+sub_set = set(sub_set.split(","))
+total_marks = marks1 + marks2 + marks3
+avg_marks = (total_marks)/ 3
+if marks1 >= marks2  and  marks1 >= marks3 :
+    highest = fav_sub[0]
+elif marks2 >=  marks3 :
+    highest = fav_sub[1]
+else :
+    highest = fav_sub[2]
+fav_sub.sort()    
+print("              students details                ")
+print(f"name : {name}")
+print(f"student info :{tuple}")
+print(f"favourite subs :{fav_sub}")
+print(f"marks: {dict}")
+print(f"total marks : {total_marks}")
+print(f"avg marks : {avg_marks}")
+print(f"highest scoring sub: {highest} ")
+print(f"technical skills: {sub_set}")

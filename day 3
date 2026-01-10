@@ -20,4 +20,88 @@ print(f"product in cart: {dict}")
 print(f"total amt : {total_cart_value} ")
 print(f"discount : {discount}%")
 print(f"final amt: {final_payable_amt}")
+
+
+#day3 intermediate
+dict = {1: {"name" : "laptop",
+            "price" : 45000 ,
+            "category" : "electronics"},
+        2 : {"name": "mobile" , "price" : 20000 ,
+             "category" : "electronics"} , 
+        3 : {"name" : "rice" , "price" : 1200 , 
+            "category" : "grocery"} ,
+         4 : {"name" : "shirt" , "price" : 1800 , "category" : "clothing"}}
+name = input("name:")
+print(f"available products")
+print(f"1. {dict[1]["name"]} - ₹{dict[1]["price"]}({dict[1]["category"]})")
+print(f"2. {dict[2]["name"]} - ₹{dict[2]["price"]}({dict[2]["category"]})")
+print(f"3. {dict[3]["name"]} - ₹{dict[3]["price"]}({dict[3]["category"]})")
+print(f"4. {dict[4]["name"]} - ₹{dict[4]["price"]}({dict[4]["category"]})")
+prod1 = int(input("select prod 1 (1-4) : "))
+prod2 = int(input("select prod 2 from (1-4) : "))      
+prod3 = int(input("select prod 3 from (1-4) : "))
+pay_method = input("select payment mathod (UPI, Card, COD):")      
+total = dict[prod1]["price"] + dict[prod2]["price"] + dict[prod3]["price"]
+
+if total >= 5000:
+      discount = 20
+elif total >= 2000:
+      discount = 10
+else :
+      discount = 0
+set = {dict[prod1]["category"] , dict[prod2]["category"] , dict[prod3]["category"] }
+
+if pay_method == "COD"    and   "electronics" in set :
+     status = "order not allowed"
+elif  pay_method == "Card" and total > 3000 :
+     status = "5% discount extra"
+else :    
+    status = "no status" 
+list = [dict[prod1]["name"] , dict[prod2]["name"] , dict[prod3]["name"]]
+
+dict1 = {dict[prod1]["name"] : dict[prod1]["price"] , dict[prod2]["name"] : dict[prod2]["price"] , dict[prod3]["name"] : dict[prod3]["price"]}
+
+if pay_method == "Card" and total > 3000 :
+    discount = discount + 5
+
+print('''''================================
+                     Purchase Summary
+           ================================''')
+print(f"user : {name}")
+print(f"products : {list}")
+print(f"categories : {set}")
+print(f"payment : {pay_method }")
+print(f"cart total : {total}")
+if total < 2000 :
+    pay_amt = total
+if total >= 2000 :
+    pay_amt = total*discount/100
+print(f"discount : {discount}%")
+print(f"final price : {pay_amt}")
+print(f"status : {status}")
+print(dict1)
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   

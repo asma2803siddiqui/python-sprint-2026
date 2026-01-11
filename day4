@@ -2,7 +2,7 @@
 list = []
 i = int(input("no of days:"))
 for x in range(1,i+1):
-    n = int(input(f"day {x} expences :"))
+    n = int(input(f"day {x} expenses :"))
     list.append(n)
     
 

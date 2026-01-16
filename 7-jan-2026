@@ -1,49 +1,53 @@
-flags = []
-warnings = []
-
-name = input("Enter patient name: ")
-age = input("Enter age: ")
-
-if age == "":
-    flags.append("Invalid age")
-else:
-    age = int(age)
-    if age < 0 or age > 120:
-        flags.append("Invalid age")
-def heart_rate(n, warnings, flags):
-    if n == 0:
-        return flags, warnings
-
-    hr = input("Enter heart rate: ")
-
-    if hr == "":
-        flags.append("Invalid heart rate")
-    else:
-        hr = int(hr)
-        if hr > 180:
-            warnings.append("High heart rate")
-
-    return heart_rate(n - 1, warnings, flags)
-
-n = input("Enter number of heart rate readings: ")
-
-if n == "":
-    n = 0
-    flags.append("Invalid number of readings")
-else:
-    n = int(n)
+FAIL = []
+REVIEW = []
+PASS = ["clean data"]
+name = input("name:")
+age = input("age:")
+vitals_readings = int(input("vitals readings:"))
+def call_heart_rate(vitals_readings):
+    if vitals_readings == 0:
+        return
+    heart_rate = input("heart rate reading:")    
     
-flags, warnings = heart_rate(n, warnings, flags)
-
-if flags:
-    status = "FAIL"
-elif warnings:
-    status = "REVIEW"
-else:
-    status = "PASS"
-
-print(" Audit Report ")
-print("Patient Name:", name)
-print("Flags:", flags)
-print("Warnings:", warnings)
-print("Final Status:", status)
+    if heart_rate == "":
+        FAIL.append("invalid heart rate")
+    else :    
+        heart_rate = int(heart_rate)    
+        if heart_rate > 180:
+            REVIEW.append("high heart rate detected")
+    call_heart_rate(vitals_readings - 1)
+def call_age(age):
+    if age == "":
+        FAIL.append("invalid age")
+    else :    
+        age = int(age)
+        if age < 1 or age > 119:
+             FAIL.append("invalid age")
+call_heart_rate(vitals_readings)
+call_age(age)
+        
+a = len(FAIL) 
+b = len(REVIEW)
+def call_status(a,b):
+    if a == 0 and b == 0 :
+        status = "PASS"
+    elif a == 0 :
+        status = "REVIEW"
+    else :
+        status = "FAIL"
+    return status
+result = call_status(a,b)
+        
+print("clinical audit result")    
+print(f"name:{name}") 
+print(f"status:{result}")
+if a == 0 :
+    print(f"flags:None")
+else :
+    print(f"flags :{FAIL}")
+if b == 0 :
+    print(f"warnings :None")
+else :
+    print(f"warnings : {REVIEW}")
+if a == 0 and b == 0 :
+    print(f"pass : {PASS}")
